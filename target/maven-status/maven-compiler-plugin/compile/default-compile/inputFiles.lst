@@ -11,6 +11,7 @@
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/dto/CreateAccountRequest.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/aspect/LoggingAspect.java
+/Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/AccountNotActiveException.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/dto/LoginRequest.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/entity/Account.java

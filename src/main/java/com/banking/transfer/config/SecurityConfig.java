@@ -30,6 +30,8 @@ public class SecurityConfig {
                         .requestMatchers("/actuator/**").permitAll()
                         // All other endpoints require authentication
                         .anyRequest().authenticated())
+                .httpBasic(httpBasic -> {
+                }) // Enable HTTP Basic Authentication
                 .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()));
 
         return http.build();
