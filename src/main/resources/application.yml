@@ -34,6 +34,10 @@ server:
     include-binding-errors: always
 
 logging:
+  file:
+    name: logs/money-transfer-system.log
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg%n"
   level:
-    com.banking.transfer: DEBUG
-    org.springframework.security: DEBUG
+    com.banking.transfer: INFO
+    org.springframework.security: INFO

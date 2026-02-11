@@ -7,7 +7,6 @@ import com.banking.transfer.dto.TransactionResponse;
 import com.banking.transfer.service.AccountService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,26 +22,22 @@ public class AccountController {
 
     @PostMapping
     public ResponseEntity<AccountResponse> createAccount(@Valid @RequestBody CreateAccountRequest request) {
-        AccountResponse response = accountService.createAccount(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        return accountService.createAccount(request);
     }
 
     @PostMapping("/login")
     public ResponseEntity<AccountResponse> login(@Valid @RequestBody LoginRequest request) {
-        AccountResponse response = accountService.login(request);
-        return ResponseEntity.ok(response);
+        return accountService.login(request);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<AccountResponse> getAccount(@PathVariable Long id) {
-        AccountResponse response = accountService.getAccountResponse(id);
-        return ResponseEntity.ok(response);
+        return accountService.getAccountResponse(id);
     }
 
     @GetMapping("/{id}/balance")
     public ResponseEntity<AccountResponse> getBalance(@PathVariable Long id) {
-        AccountResponse response = accountService.getAccountResponse(id);
-        return ResponseEntity.ok(response);
+        return accountService.getAccountResponse(id);
     }
 
     @GetMapping("/{id}/transactions")
@@ -50,4 +45,7 @@ public class AccountController {
         List<TransactionResponse> transactions = accountService.getTransactions(id);
         return ResponseEntity.ok(transactions);
     }
+
 }
+
+    

@@ -14,6 +14,8 @@ import com.banking.transfer.repository.AccountRepository;
 import com.banking.transfer.repository.TransactionLogRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,15 +33,13 @@ public class AccountService {
     private final PasswordEncoder passwordEncoder;
 
     @Transactional
-    public AccountResponse createAccount(CreateAccountRequest request) {
+    public ResponseEntity<AccountResponse> createAccount(CreateAccountRequest request) {
         log.info("Creating account for username: {}", request.getUsername());
 
-        // Check if username already exists
         if (accountRepository.existsByUsername(request.getUsername())) {
             throw new DuplicateUsernameException("Username '" + request.getUsername() + "' is already taken");
         }
 
-        // Create new account
         Account account = Account.builder()
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
@@ -51,11 +51,11 @@ public class AccountService {
         Account savedAccount = accountRepository.save(account);
         log.info("Account created successfully with ID: {}", savedAccount.getId());
 
-        return toAccountResponse(savedAccount);
+        return ResponseEntity.status(HttpStatus.CREATED).body(toAccountResponse(savedAccount));
     }
 
     @Transactional(readOnly = true)
-    public AccountResponse login(LoginRequest request) {
+    public ResponseEntity<AccountResponse> login(LoginRequest request) {
         log.info("Login attempt for username: {}", request.getUsername());
 
         Account account = accountRepository.findByUsername(request.getUsername())
@@ -66,7 +66,7 @@ public class AccountService {
         }
 
         log.info("Login successful for username: {}", request.getUsername());
-        return toAccountResponse(account);
+        return ResponseEntity.ok(toAccountResponse(account));
     }
 
     @Transactional(readOnly = true)
@@ -76,14 +76,13 @@ public class AccountService {
     }
 
     @Transactional(readOnly = true)
-    public AccountResponse getAccountResponse(Long accountId) {
+    public ResponseEntity<AccountResponse> getAccountResponse(Long accountId) {
         Account account = getAccount(accountId);
-        return toAccountResponse(account);
+        return ResponseEntity.ok(toAccountResponse(account));
     }
 
     @Transactional(readOnly = true)
     public List<TransactionResponse> getTransactions(Long accountId) {
-        // Verify account exists
         getAccount(accountId);
 
         List<TransactionLog> transactions = transactionLogRepository.findByAccountId(accountId);
@@ -100,13 +99,7 @@ public class AccountService {
                             .createdOn(t.getCreatedOn())
                             .build();
 
-                    // Determine if this is a DEBIT or CREDIT for this account
-                    if (t.getFromAccountId().equals(accountId)) {
-                        response.setType("DEBIT");
-                    } else {
-                        response.setType("CREDIT");
-                    }
-
+                    response.setType(t.getFromAccountId().equals(accountId) ? "DEBIT" : "CREDIT");
                     return response;
                 })
                 .collect(Collectors.toList());
@@ -115,6 +108,7 @@ public class AccountService {
     private AccountResponse toAccountResponse(Account account) {
         return AccountResponse.builder()
                 .id(account.getId())
+                .accountNumber(String.format("ACC-%06d", account.getId()))
                 .username(account.getUsername())
                 .holderName(account.getHolderName())
                 .balance(account.getBalance())

@@ -1,0 +1,606 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.banking:transfer >------------------------
+[INFO] Building MoneyTransferSystem 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.3.2:clean (default-clean) @ transfer ---
+[INFO] Deleting /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ transfer ---
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ transfer ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 29 source files with javac [debug release 17] to target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[37,9] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.service.AccountService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[37,62] cannot find symbol
+  symbol:   method getUsername()
+  location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[39,55] cannot find symbol
+  symbol:   method getUsername()
+  location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[40,72] cannot find symbol
+  symbol:   method getUsername()
+  location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[43,34] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[44,34] cannot find symbol
+  symbol:   method getUsername()
+  location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[45,57] cannot find symbol
+  symbol:   method getPassword()
+  location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[46,36] cannot find symbol
+  symbol:   method getHolderName()
+  location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[47,33] cannot find symbol
+  symbol:   method getInitialBalance()
+  location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[52,9] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.service.AccountService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[52,74] cannot find symbol
+  symbol:   method getId()
+  location: variable savedAccount of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[59,9] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.service.AccountService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[59,59] cannot find symbol
+  symbol:   method getUsername()
+  location: variable request of type com.banking.transfer.dto.LoginRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[61,67] cannot find symbol
+  symbol:   method getUsername()
+  location: variable request of type com.banking.transfer.dto.LoginRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[64,45] cannot find symbol
+  symbol:   method getPassword()
+  location: variable request of type com.banking.transfer.dto.LoginRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[64,68] cannot find symbol
+  symbol:   method getPassword()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[68,9] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.service.AccountService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[68,62] cannot find symbol
+  symbol:   method getUsername()
+  location: variable request of type com.banking.transfer.dto.LoginRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[92,71] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.TransactionResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[93,34] cannot find symbol
+  symbol:   method getId()
+  location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[94,45] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[95,43] cannot find symbol
+  symbol:   method getToAccountId()
+  location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[96,38] cannot find symbol
+  symbol:   method getAmount()
+  location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[97,38] cannot find symbol
+  symbol:   method getStatus()
+  location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[98,45] cannot find symbol
+  symbol:   method getFailureReason()
+  location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[99,41] cannot find symbol
+  symbol:   method getCreatedOn()
+  location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[102,29] cannot find symbol
+  symbol:   method setType(t.getFromA[...]EDIT")
+  location: variable response of type com.banking.transfer.dto.TransactionResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[102,39] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[109,31] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.AccountResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[110,28] cannot find symbol
+  symbol:   method getId()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[111,65] cannot find symbol
+  symbol:   method getId()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[112,34] cannot find symbol
+  symbol:   method getUsername()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[113,36] cannot find symbol
+  symbol:   method getHolderName()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[114,33] cannot find symbol
+  symbol:   method getBalance()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[115,32] cannot find symbol
+  symbol:   method getStatus()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[26,9] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.service.TransferService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[27,24] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[27,52] cannot find symbol
+  symbol:   method getToAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[27,78] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[33,66] cannot find symbol
+  symbol:   method getIdempotencyKey()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[35,82] cannot find symbol
+  symbol:   method getIdempotencyKey()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[40,69] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[42,67] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[44,67] cannot find symbol
+  symbol:   method getToAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[46,72] cannot find symbol
+  symbol:   method getToAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[58,28] cannot find symbol
+  symbol:   method getBalance()
+  location: variable fromAccount of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[58,59] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[63,38] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[64,37] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[71,59] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[72,43] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[73,41] cannot find symbol
+  symbol:   method getToAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[74,36] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[76,44] cannot find symbol
+  symbol:   method getIdempotencyKey()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[81,13] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.service.TransferService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[81,85] cannot find symbol
+  symbol:   method getId()
+  location: variable savedLog of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[83,36] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.TransferResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[84,44] cannot find symbol
+  symbol:   method getId()
+  location: variable savedLog of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[87,41] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[88,40] cannot find symbol
+  symbol:   method getToAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[89,36] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[94,54] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[95,43] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[96,41] cannot find symbol
+  symbol:   method getToAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[97,36] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[100,44] cannot find symbol
+  symbol:   method getIdempotencyKey()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[105,13] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.service.TransferService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[111,20] cannot find symbol
+  symbol:   method getFromAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[111,54] cannot find symbol
+  symbol:   method getToAccountId()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[115,20] cannot find symbol
+  symbol:   method getAmount()
+  location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/aspect/LoggingAspect.java:[19,9] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.aspect.LoggingAspect
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/aspect/LoggingAspect.java:[25,13] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.aspect.LoggingAspect
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/aspect/LoggingAspect.java:[29,13] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.aspect.LoggingAspect
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java:[24,9] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.security.CustomUserDetailsService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java:[33,40] cannot find symbol
+  symbol:   method getStatus()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java:[30,34] cannot find symbol
+  symbol:   method getUsername()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java:[31,34] cannot find symbol
+  symbol:   method getPassword()
+  location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[20,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[21,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[31,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[32,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[42,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[43,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[53,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[54,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[64,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[65,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[75,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[76,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[86,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[87,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[103,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[104,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[114,17] cannot find symbol
+  symbol:   variable log
+  location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[115,52] cannot find symbol
+  symbol:   method builder()
+  location: class com.banking.transfer.dto.ErrorResponse
+[INFO] 95 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.882 s
+[INFO] Finished at: 2026-02-11T22:53:45+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project transfer: Compilation failure: Compilation failure: 
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[37,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.service.AccountService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[37,62] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[39,55] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[40,72] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[43,34] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[44,34] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[45,57] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[46,36] cannot find symbol
+[ERROR]   symbol:   method getHolderName()
+[ERROR]   location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[47,33] cannot find symbol
+[ERROR]   symbol:   method getInitialBalance()
+[ERROR]   location: variable request of type com.banking.transfer.dto.CreateAccountRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[52,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.service.AccountService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[52,74] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedAccount of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[59,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.service.AccountService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[59,59] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable request of type com.banking.transfer.dto.LoginRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[61,67] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable request of type com.banking.transfer.dto.LoginRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[64,45] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable request of type com.banking.transfer.dto.LoginRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[64,68] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[68,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.service.AccountService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[68,62] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable request of type com.banking.transfer.dto.LoginRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[92,71] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.TransactionResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[93,34] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[94,45] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[95,43] cannot find symbol
+[ERROR]   symbol:   method getToAccountId()
+[ERROR]   location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[96,38] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[97,38] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[98,45] cannot find symbol
+[ERROR]   symbol:   method getFailureReason()
+[ERROR]   location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[99,41] cannot find symbol
+[ERROR]   symbol:   method getCreatedOn()
+[ERROR]   location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[102,29] cannot find symbol
+[ERROR]   symbol:   method setType(t.getFromA[...]EDIT")
+[ERROR]   location: variable response of type com.banking.transfer.dto.TransactionResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[102,39] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable t of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[109,31] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.AccountResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[110,28] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[111,65] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[112,34] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[113,36] cannot find symbol
+[ERROR]   symbol:   method getHolderName()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[114,33] cannot find symbol
+[ERROR]   symbol:   method getBalance()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/AccountService.java:[115,32] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[26,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.service.TransferService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[27,24] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[27,52] cannot find symbol
+[ERROR]   symbol:   method getToAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[27,78] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[33,66] cannot find symbol
+[ERROR]   symbol:   method getIdempotencyKey()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[35,82] cannot find symbol
+[ERROR]   symbol:   method getIdempotencyKey()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[40,69] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[42,67] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[44,67] cannot find symbol
+[ERROR]   symbol:   method getToAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[46,72] cannot find symbol
+[ERROR]   symbol:   method getToAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[58,28] cannot find symbol
+[ERROR]   symbol:   method getBalance()
+[ERROR]   location: variable fromAccount of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[58,59] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[63,38] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[64,37] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[71,59] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[72,43] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[73,41] cannot find symbol
+[ERROR]   symbol:   method getToAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[74,36] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[76,44] cannot find symbol
+[ERROR]   symbol:   method getIdempotencyKey()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[81,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.service.TransferService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[81,85] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedLog of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[83,36] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.TransferResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[84,44] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedLog of type com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[87,41] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[88,40] cannot find symbol
+[ERROR]   symbol:   method getToAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[89,36] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[94,54] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.entity.TransactionLog
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[95,43] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[96,41] cannot find symbol
+[ERROR]   symbol:   method getToAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[97,36] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[100,44] cannot find symbol
+[ERROR]   symbol:   method getIdempotencyKey()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[105,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.service.TransferService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[111,20] cannot find symbol
+[ERROR]   symbol:   method getFromAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[111,54] cannot find symbol
+[ERROR]   symbol:   method getToAccountId()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java:[115,20] cannot find symbol
+[ERROR]   symbol:   method getAmount()
+[ERROR]   location: variable request of type com.banking.transfer.dto.TransferRequest
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/aspect/LoggingAspect.java:[19,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.aspect.LoggingAspect
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/aspect/LoggingAspect.java:[25,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.aspect.LoggingAspect
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/aspect/LoggingAspect.java:[29,13] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.aspect.LoggingAspect
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java:[24,9] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.security.CustomUserDetailsService
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java:[33,40] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java:[30,34] cannot find symbol
+[ERROR]   symbol:   method getUsername()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/security/CustomUserDetailsService.java:[31,34] cannot find symbol
+[ERROR]   symbol:   method getPassword()
+[ERROR]   location: variable account of type com.banking.transfer.entity.Account
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[20,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[21,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[31,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[32,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[42,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[43,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[53,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[54,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[64,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[65,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[75,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[76,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[86,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[87,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[103,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[104,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[114,17] cannot find symbol
+[ERROR]   symbol:   variable log
+[ERROR]   location: class com.banking.transfer.exception.GlobalExceptionHandler
+[ERROR] /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/GlobalExceptionHandler.java:[115,52] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.banking.transfer.dto.ErrorResponse
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

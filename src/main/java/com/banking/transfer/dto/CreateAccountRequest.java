@@ -1,6 +1,7 @@
 package com.banking.transfer.dto;
 
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -27,5 +28,6 @@ public class CreateAccountRequest {
 
     @NotNull(message = "Initial balance is required")
     @DecimalMin(value = "0.0", inclusive = true, message = "Balance must be non-negative")
+    @Digits(integer = 10, fraction = 2, message = "Balance must be a valid number")
     private BigDecimal initialBalance;
 }

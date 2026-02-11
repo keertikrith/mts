@@ -43,7 +43,6 @@ public class Account {
     @LastModifiedDate
     private LocalDateTime lastUpdated;
 
-    // Business methods
     public void debit(BigDecimal amount) {
         if (this.balance.compareTo(amount) < 0) {
             throw new IllegalArgumentException("Insufficient balance");
@@ -57,5 +56,20 @@ public class Account {
 
     public boolean isActive() {
         return this.status == AccountStatus.ACTIVE;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Account))
+            return false;
+        Account account = (Account) o;
+        return id != null && id.equals(account.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 }

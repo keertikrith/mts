@@ -8,18 +8,22 @@ import com.banking.transfer.entity.TransactionStatus;
 import com.banking.transfer.exception.*;
 import com.banking.transfer.repository.AccountRepository;
 import com.banking.transfer.repository.TransactionLogRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
 public class TransferService {
 
     private final AccountRepository accountRepository;
     private final TransactionLogRepository transactionLogRepository;
+
+    public TransferService(AccountRepository accountRepository,
+            TransactionLogRepository transactionLogRepository) {
+        this.accountRepository = accountRepository;
+        this.transactionLogRepository = transactionLogRepository;
+    }
 
     @Transactional
     public TransferResponse transfer(TransferRequest request) {

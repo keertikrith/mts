@@ -15,6 +15,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.math.BigDecimal;
@@ -65,20 +66,19 @@ class AccountServiceTest {
 
     @Test
     void createAccount_Success() {
-        // Arrange
         when(accountRepository.existsByUsername(anyString())).thenReturn(false);
         when(passwordEncoder.encode(anyString())).thenReturn("$2a$10$encoded_password");
         when(accountRepository.save(any(Account.class))).thenReturn(testAccount);
 
-        // Act
-        AccountResponse response = accountService.createAccount(createAccountRequest);
+        ResponseEntity<AccountResponse> responseEntity = accountService.createAccount(createAccountRequest);
+        AccountResponse response = responseEntity.getBody();
 
-        // Assert
         assertNotNull(response);
         assertEquals("testuser", response.getUsername());
         assertEquals("Test User", response.getHolderName());
         assertEquals(new BigDecimal("1000.00"), response.getBalance());
         assertEquals(AccountStatus.ACTIVE, response.getStatus());
+        assertEquals("ACC-000001", response.getAccountNumber());
 
         verify(accountRepository, times(1)).existsByUsername("testuser");
         verify(passwordEncoder, times(1)).encode("password123");
@@ -87,10 +87,8 @@ class AccountServiceTest {
 
     @Test
     void createAccount_DuplicateUsername_ThrowsException() {
-        // Arrange
         when(accountRepository.existsByUsername(anyString())).thenReturn(true);
 
-        // Act & Assert
         DuplicateUsernameException exception = assertThrows(
                 DuplicateUsernameException.class,
                 () -> accountService.createAccount(createAccountRequest));
@@ -102,7 +100,6 @@ class AccountServiceTest {
 
     @Test
     void login_ValidCredentials_Success() {
-        // Arrange
         LoginRequest loginRequest = LoginRequest.builder()
                 .username("testuser")
                 .password("password123")
@@ -111,10 +108,9 @@ class AccountServiceTest {
         when(accountRepository.findByUsername("testuser")).thenReturn(Optional.of(testAccount));
         when(passwordEncoder.matches("password123", "$2a$10$encoded_password")).thenReturn(true);
 
-        // Act
-        AccountResponse response = accountService.login(loginRequest);
+        ResponseEntity<AccountResponse> responseEntity = accountService.login(loginRequest);
+        AccountResponse response = responseEntity.getBody();
 
-        // Assert
         assertNotNull(response);
         assertEquals("testuser", response.getUsername());
         assertEquals(1L, response.getId());
@@ -125,7 +121,6 @@ class AccountServiceTest {
 
     @Test
     void login_InvalidUsername_ThrowsException() {
-        // Arrange
         LoginRequest loginRequest = LoginRequest.builder()
                 .username("nonexistent")
                 .password("password123")
@@ -133,7 +128,6 @@ class AccountServiceTest {
 
         when(accountRepository.findByUsername("nonexistent")).thenReturn(Optional.empty());
 
-        // Act & Assert
         InvalidCredentialsException exception = assertThrows(
                 InvalidCredentialsException.class,
                 () -> accountService.login(loginRequest));
@@ -145,7 +139,6 @@ class AccountServiceTest {
 
     @Test
     void login_InvalidPassword_ThrowsException() {
-        // Arrange
         LoginRequest loginRequest = LoginRequest.builder()
                 .username("testuser")
                 .password("wrongpassword")
@@ -154,7 +147,6 @@ class AccountServiceTest {
         when(accountRepository.findByUsername("testuser")).thenReturn(Optional.of(testAccount));
         when(passwordEncoder.matches("wrongpassword", "$2a$10$encoded_password")).thenReturn(false);
 
-        // Act & Assert
         InvalidCredentialsException exception = assertThrows(
                 InvalidCredentialsException.class,
                 () -> accountService.login(loginRequest));
@@ -166,13 +158,11 @@ class AccountServiceTest {
 
     @Test
     void getAccountResponse_Success() {
-        // Arrange
         when(accountRepository.findById(1L)).thenReturn(Optional.of(testAccount));
 
-        // Act
-        AccountResponse response = accountService.getAccountResponse(1L);
+        ResponseEntity<AccountResponse> responseEntity = accountService.getAccountResponse(1L);
+        AccountResponse response = responseEntity.getBody();
 
-        // Assert
         assertNotNull(response);
         assertEquals(1L, response.getId());
         assertEquals("testuser", response.getUsername());
@@ -184,14 +174,15 @@ class AccountServiceTest {
 
     @Test
     void getAccountResponse_AccountNotFound_ThrowsException() {
-        // Arrange
         when(accountRepository.findById(999L)).thenReturn(Optional.empty());
 
-        // Act & Assert
         assertThrows(
                 com.banking.transfer.exception.AccountNotFoundException.class,
                 () -> accountService.getAccountResponse(999L));
 
         verify(accountRepository, times(1)).findById(999L);
     }
+
 }
+
+    

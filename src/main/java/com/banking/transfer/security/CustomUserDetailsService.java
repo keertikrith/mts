@@ -28,8 +28,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         return User.builder()
                 .username(account.getUsername())
-                .password(account.getPassword()) // Already encoded in DB
-                .authorities(Collections.emptyList()) // No roles needed for now
+                .password(account.getPassword())
+                .authorities(Collections.emptyList())
                 .accountLocked(!account.getStatus().name().equals("ACTIVE"))
                 .build();
     }

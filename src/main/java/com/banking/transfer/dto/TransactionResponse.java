@@ -22,5 +22,5 @@ public class TransactionResponse {
     private TransactionStatus status;
     private String failureReason;
     private LocalDateTime createdOn;
-    private String type; // DEBIT or CREDIT
+    private String type;
 }
