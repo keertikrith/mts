@@ -183,6 +183,97 @@ class AccountServiceTest {
         verify(accountRepository, times(1)).findById(999L);
     }
 
-}
+    @Test
+    void getAccount_Success() {
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(testAccount));
 
-    
+        Account result = accountService.getAccount(1L);
+
+        assertNotNull(result);
+        assertEquals(1L, result.getId());
+        assertEquals("testuser", result.getUsername());
+        verify(accountRepository, times(1)).findById(1L);
+    }
+
+    @Test
+    void getAccount_NotFound_ThrowsException() {
+        when(accountRepository.findById(999L)).thenReturn(Optional.empty());
+
+        assertThrows(
+                com.banking.transfer.exception.AccountNotFoundException.class,
+                () -> accountService.getAccount(999L));
+
+        verify(accountRepository, times(1)).findById(999L);
+    }
+
+    @Test
+    void getTransactions_EmptyList() {
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(testAccount));
+        when(transactionLogRepository.findByAccountId(1L)).thenReturn(java.util.Collections.emptyList());
+
+        java.util.List<com.banking.transfer.dto.TransactionResponse> transactions = accountService.getTransactions(1L);
+
+        assertNotNull(transactions);
+        assertTrue(transactions.isEmpty());
+        verify(accountRepository, times(1)).findById(1L);
+        verify(transactionLogRepository, times(1)).findByAccountId(1L);
+    }
+
+    @Test
+    void getTransactions_WithDebitTransactions() {
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(testAccount));
+
+        com.banking.transfer.entity.TransactionLog debitLog = com.banking.transfer.entity.TransactionLog.builder()
+                .id("txn-1")
+                .fromAccountId(1L)
+                .toAccountId(2L)
+                .amount(new BigDecimal("100.00"))
+                .status(com.banking.transfer.entity.TransactionStatus.SUCCESS)
+                .createdOn(java.time.LocalDateTime.now())
+                .build();
+
+        when(transactionLogRepository.findByAccountId(1L)).thenReturn(java.util.List.of(debitLog));
+
+        java.util.List<com.banking.transfer.dto.TransactionResponse> transactions = accountService.getTransactions(1L);
+
+        assertNotNull(transactions);
+        assertEquals(1, transactions.size());
+        assertEquals("DEBIT", transactions.get(0).getType());
+        assertEquals(new BigDecimal("100.00"), transactions.get(0).getAmount());
+    }
+
+    @Test
+    void getTransactions_WithCreditTransactions() {
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(testAccount));
+
+        com.banking.transfer.entity.TransactionLog creditLog = com.banking.transfer.entity.TransactionLog.builder()
+                .id("txn-2")
+                .fromAccountId(2L)
+                .toAccountId(1L)
+                .amount(new BigDecimal("200.00"))
+                .status(com.banking.transfer.entity.TransactionStatus.SUCCESS)
+                .createdOn(java.time.LocalDateTime.now())
+                .build();
+
+        when(transactionLogRepository.findByAccountId(1L)).thenReturn(java.util.List.of(creditLog));
+
+        java.util.List<com.banking.transfer.dto.TransactionResponse> transactions = accountService.getTransactions(1L);
+
+        assertNotNull(transactions);
+        assertEquals(1, transactions.size());
+        assertEquals("CREDIT", transactions.get(0).getType());
+        assertEquals(new BigDecimal("200.00"), transactions.get(0).getAmount());
+    }
+
+    @Test
+    void getTransactions_AccountNotFound() {
+        when(accountRepository.findById(999L)).thenReturn(Optional.empty());
+
+        assertThrows(
+                com.banking.transfer.exception.AccountNotFoundException.class,
+                () -> accountService.getTransactions(999L));
+
+        verify(accountRepository, times(1)).findById(999L);
+    }
+
+}
