@@ -144,8 +144,7 @@ class TransferServiceTest {
         // Arrange
         transferRequest.setToAccountId(1L); // Same as fromAccountId
 
-        when(transactionLogRepository.findByIdempotencyKey(anyString())).thenReturn(Optional.empty());
-        when(accountRepository.findById(1L)).thenReturn(Optional.of(fromAccount));
+        // No mocking needed - validation happens before any repository calls
 
         // Act & Assert
         IllegalArgumentException exception = assertThrows(
@@ -173,5 +172,109 @@ class TransferServiceTest {
 
         verify(accountRepository, times(1)).findById(1L);
         verify(accountRepository, never()).save(any(Account.class));
+    }
+
+    @Test
+    void transfer_ToAccountNotFound_ThrowsException() {
+        // Arrange
+        when(transactionLogRepository.findByIdempotencyKey(anyString())).thenReturn(Optional.empty());
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(fromAccount));
+        when(accountRepository.findById(2L)).thenReturn(Optional.empty());
+
+        // Act & Assert
+        AccountNotFoundException exception = assertThrows(
+                AccountNotFoundException.class,
+                () -> transferService.transfer(transferRequest));
+
+        assertTrue(exception.getMessage().contains("not found"));
+
+        verify(accountRepository, times(1)).findById(2L);
+        verify(accountRepository, never()).save(any(Account.class));
+    }
+
+    @Test
+    void transfer_FromAccountInactive_ThrowsException() {
+        // Arrange
+        fromAccount.setStatus(AccountStatus.LOCKED);
+        when(transactionLogRepository.findByIdempotencyKey(anyString())).thenReturn(Optional.empty());
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(fromAccount));
+        when(accountRepository.findById(2L)).thenReturn(Optional.of(toAccount));
+
+        // Act & Assert
+        com.banking.transfer.exception.AccountNotActiveException exception = assertThrows(
+                com.banking.transfer.exception.AccountNotActiveException.class,
+                () -> transferService.transfer(transferRequest));
+
+        assertTrue(exception.getMessage().contains("not active"));
+        verify(accountRepository, never()).save(any(Account.class));
+    }
+
+    @Test
+    void transfer_ToAccountInactive_ThrowsException() {
+        // Arrange
+        toAccount.setStatus(AccountStatus.LOCKED);
+        when(transactionLogRepository.findByIdempotencyKey(anyString())).thenReturn(Optional.empty());
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(fromAccount));
+        when(accountRepository.findById(2L)).thenReturn(Optional.of(toAccount));
+
+        // Act & Assert
+        com.banking.transfer.exception.AccountNotActiveException exception = assertThrows(
+                com.banking.transfer.exception.AccountNotActiveException.class,
+                () -> transferService.transfer(transferRequest));
+
+        assertTrue(exception.getMessage().contains("not active"));
+        verify(accountRepository, never()).save(any(Account.class));
+    }
+
+    @Test
+    void transfer_NegativeAmount_ThrowsException() {
+        // Arrange
+        transferRequest.setAmount(new BigDecimal("-100.00"));
+
+        // No mocking needed - validation happens before any repository calls
+
+        // Act & Assert
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> transferService.transfer(transferRequest));
+
+        assertTrue(exception.getMessage().contains("positive"));
+        verify(accountRepository, never()).findById(anyLong());
+    }
+
+    @Test
+    void transfer_ZeroAmount_ThrowsException() {
+        // Arrange
+        transferRequest.setAmount(BigDecimal.ZERO);
+
+        // No mocking needed - validation happens before any repository calls
+
+        // Act & Assert
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> transferService.transfer(transferRequest));
+
+        assertTrue(exception.getMessage().contains("positive"));
+        verify(accountRepository, never()).findById(anyLong());
+    }
+
+    @Test
+    void transfer_FailureLogsTransaction() {
+        // Arrange
+        fromAccount.setBalance(new BigDecimal("100.00"));
+        transferRequest.setAmount(new BigDecimal("500.00"));
+
+        when(transactionLogRepository.findByIdempotencyKey(anyString())).thenReturn(Optional.empty());
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(fromAccount));
+        when(accountRepository.findById(2L)).thenReturn(Optional.of(toAccount));
+        when(transactionLogRepository.save(any(TransactionLog.class)))
+                .thenAnswer(invocation -> invocation.getArgument(0));
+
+        // Act & Assert
+        assertThrows(
+                InsufficientBalanceException.class,
+                () -> transferService.transfer(transferRequest));
+
+        verify(transactionLogRepository, times(1)).save(any(TransactionLog.class));
     }
 }
