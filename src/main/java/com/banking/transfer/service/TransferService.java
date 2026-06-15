@@ -18,11 +18,14 @@ public class TransferService {
 
     private final AccountRepository accountRepository;
     private final TransactionLogRepository transactionLogRepository;
+    private final RewardService rewardService;                          // ← NEW
 
     public TransferService(AccountRepository accountRepository,
-            TransactionLogRepository transactionLogRepository) {
+                           TransactionLogRepository transactionLogRepository,
+                           RewardService rewardService) {                              // ← NEW
         this.accountRepository = accountRepository;
         this.transactionLogRepository = transactionLogRepository;
+        this.rewardService = rewardService;                            // ← NEW
     }
 
     @Transactional
@@ -81,6 +84,10 @@ public class TransferService {
                     .build();
 
             TransactionLog savedLog = transactionLogRepository.save(transactionLog);
+
+            // ── NEW: process rewards for the sender ──────────────────────────────
+            rewardService.processReward(savedLog, request.getFromAccountId());
+            // ────────────────────────────────────────────────────────────────────
 
             log.info("Transfer completed successfully. Transaction ID: {}", savedLog.getId());
 
