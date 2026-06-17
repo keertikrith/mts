@@ -1,3 +1,69 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+### --- Spring Boot & Build Tools ---
+# Target directories (compiled code)
+target/
+build/
+out/
+
+# Log files
+*.log
+
+# Packaged files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+### --- Maven ---
+# Maven wrapper files (Optional: comment out if you want to commit the wrapper)
+.mvn/
+mvnw
+mvnw.cmd
+
+### --- Gradle ---
+# Gradle wrapper files (Optional: comment out if you want to commit the wrapper)
+.gradle/
+gradlew
+gradlew.bat
+gradle/wrapper/
+
+### --- IDEs & Editors ---
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+*.launch
+*.factorypath
+
+# Visual Studio Code
+.vscode/
+
+### --- OS / System Files ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### --- Security / Environment ---
+# Environment variables containing sensitive secrets
+.env
+.env.local
