@@ -1,11 +1,18 @@
 package com.banking.transfer.service;
 
 import com.banking.transfer.dto.RewardLedgerResponse;
+import com.banking.transfer.dto.RewardRedemptionLedgerResponse;
+import com.banking.transfer.dto.RewardRedemptionResponse;
 import com.banking.transfer.dto.RewardSummaryResponse;
+import com.banking.transfer.entity.Account;
 import com.banking.transfer.entity.RewardLedger;
+import com.banking.transfer.entity.RewardRedemption;
 import com.banking.transfer.entity.TransactionLog;
 import com.banking.transfer.entity.TransactionStatus;
+import com.banking.transfer.exception.AccountNotFoundException;
+import com.banking.transfer.repository.AccountRepository;
 import com.banking.transfer.repository.RewardLedgerRepository;
+import com.banking.transfer.repository.RewardRedemptionRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -26,7 +33,15 @@ public class RewardService {
     // 1 point per ₹100 transferred
     private static final BigDecimal POINTS_DIVISOR = new BigDecimal("100");
 
+    // 1 point = ₹1 on redemption
+    private static final BigDecimal RUPEES_PER_POINT = BigDecimal.ONE;
+
+    // Minimum points required to redeem
+    private static final int MINIMUM_REDEMPTION_POINTS = 10;
+
     private final RewardLedgerRepository rewardLedgerRepository;
+    private final RewardRedemptionRepository rewardRedemptionRepository;
+    private final AccountRepository accountRepository;
 
     /**
      * Evaluates a completed transaction for reward eligibility and grants points
@@ -77,21 +92,99 @@ public class RewardService {
     }
 
     /**
-     * Returns total reward points and full reward history for an account.
+     * Returns total reward points and full reward + redemption history for an account.
      */
     @Transactional(readOnly = true)
     public RewardSummaryResponse getRewardSummary(Long accountId) {
         int totalPoints = rewardLedgerRepository.sumPointsByAccountId(accountId);
+        int redeemedPoints = rewardRedemptionRepository.sumPointsRedeemedByAccountId(accountId);
+        int availablePoints = totalPoints - redeemedPoints;
+
         List<RewardLedger> entries = rewardLedgerRepository.findByAccountIdOrderByCreatedOnDesc(accountId);
+        List<RewardRedemption> redemptions = rewardRedemptionRepository.findByAccountIdOrderByRedeemedOnDesc(accountId);
 
         List<RewardLedgerResponse> history = entries.stream()
-                .map(this::toResponse)
+                .map(this::toEarnResponse)
+                .collect(Collectors.toList());
+
+        List<RewardRedemptionLedgerResponse> redemptionHistory = redemptions.stream()
+                .map(this::toRedemptionResponse)
                 .collect(Collectors.toList());
 
         return RewardSummaryResponse.builder()
                 .accountId(accountId)
                 .totalPoints(totalPoints)
+                .redeemedPoints(redeemedPoints)
+                .availablePoints(availablePoints)
                 .history(history)
+                .redemptionHistory(redemptionHistory)
+                .build();
+    }
+
+    /**
+     * Redeems reward points and credits equivalent rupees (1 pt = ₹1) to account balance.
+     *
+     * Validation:
+     *   1. Account must exist and be ACTIVE
+     *   2. points >= MINIMUM_REDEMPTION_POINTS (10)
+     *   3. availablePoints >= points requested
+     *
+     * @param accountId the account redeeming points
+     * @param points    number of points to redeem
+     * @return RewardRedemptionResponse with updated balance and points info
+     */
+    @Transactional
+    public RewardRedemptionResponse redeemPoints(Long accountId, int points) {
+        // Validate account exists
+        Account account = accountRepository.findById(accountId)
+                .orElseThrow(() -> new AccountNotFoundException("Account with ID " + accountId + " not found"));
+
+        // Validate account is active
+        if (!account.isActive()) {
+            throw new IllegalStateException("Account is not active");
+        }
+
+        // Validate minimum redemption
+        if (points < MINIMUM_REDEMPTION_POINTS) {
+            throw new IllegalArgumentException(
+                    "Minimum redemption is " + MINIMUM_REDEMPTION_POINTS + " points");
+        }
+
+        // Validate sufficient available points
+        int totalEarned = rewardLedgerRepository.sumPointsByAccountId(accountId);
+        int totalRedeemed = rewardRedemptionRepository.sumPointsRedeemedByAccountId(accountId);
+        int available = totalEarned - totalRedeemed;
+
+        if (points > available) {
+            throw new IllegalArgumentException(
+                    "Insufficient points. Available: " + available + ", Requested: " + points);
+        }
+
+        // Calculate amount to credit (1 pt = ₹1)
+        BigDecimal amountCredited = RUPEES_PER_POINT.multiply(new BigDecimal(points));
+
+        // Credit balance to account
+        account.credit(amountCredited);
+        accountRepository.save(account);
+
+        // Record the redemption
+        RewardRedemption redemption = RewardRedemption.builder()
+                .accountId(accountId)
+                .pointsRedeemed(points)
+                .amountCredited(amountCredited)
+                .build();
+        rewardRedemptionRepository.save(redemption);
+
+        int newAvailable = available - points;
+
+        log.info("Redeemed {} points (₹{}) for account {}. New available: {}", points, amountCredited, accountId, newAvailable);
+
+        return RewardRedemptionResponse.builder()
+                .pointsRedeemed(points)
+                .amountCredited(amountCredited)
+                .availablePoints(newAvailable)
+                .newBalance(account.getBalance())
+                .message("Successfully redeemed " + points + " points for ₹" + amountCredited)
                 .build();
     }
 
@@ -125,12 +218,21 @@ public class RewardService {
         return amount.divide(POINTS_DIVISOR, 0, java.math.RoundingMode.FLOOR).intValue();
     }
 
-    private RewardLedgerResponse toResponse(RewardLedger ledger) {
+    private RewardLedgerResponse toEarnResponse(RewardLedger ledger) {
         return RewardLedgerResponse.builder()
                 .id(ledger.getId())
                 .transactionId(ledger.getTransactionId())
                 .pointsEarned(ledger.getPointsEarned())
                 .createdOn(ledger.getCreatedOn())
+                .build();
+    }
+
+    private RewardRedemptionLedgerResponse toRedemptionResponse(RewardRedemption redemption) {
+        return RewardRedemptionLedgerResponse.builder()
+                .id(redemption.getId())
+                .pointsRedeemed(redemption.getPointsRedeemed())
+                .amountCredited(redemption.getAmountCredited())
+                .redeemedOn(redemption.getRedeemedOn())
                 .build();
     }
 }

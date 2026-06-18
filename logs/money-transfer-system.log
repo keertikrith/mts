@@ -96,3 +96,198 @@
 2026-06-15 15:14:50 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-06-15 15:14:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-06-15 15:14:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-18 12:20:23 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-18 12:20:23 [main] INFO  c.b.t.MoneyTransferSystemApplication - Starting MoneyTransferSystemApplication using Java 17.0.19 with PID 3835 (/Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/target/classes started by keertikrith in /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend)
+2026-06-18 12:20:23 [main] INFO  c.b.t.MoneyTransferSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-18 12:20:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-18 12:20:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 3 JPA repository interfaces.
+2026-06-18 12:20:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-18 12:20:23 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-18 12:20:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-18 12:20:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-06-18 12:20:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-18 12:20:23 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 684 ms
+2026-06-18 12:20:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-18 12:20:23 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:transferdb user=SA
+2026-06-18 12:20:23 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-18 12:20:23 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:transferdb'
+2026-06-18 12:20:23 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-18 12:20:23 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-06-18 12:20:23 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-18 12:20:24 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-18 12:20:24 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-18 12:20:24 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-18 12:20:24 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-18 12:20:24 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-18 12:20:24 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-18 12:20:24 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-18 12:20:24 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@566c6b91, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5e0e97b6, org.springframework.security.web.context.SecurityContextHolderFilter@4f042c70, org.springframework.security.web.header.HeaderWriterFilter@54139bd3, org.springframework.web.filter.CorsFilter@4b68d2a6, org.springframework.web.filter.CorsFilter@46f03d6d, org.springframework.security.web.authentication.logout.LogoutFilter@496a514f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@11869005, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@78cb1a92, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39993624, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7375e6c1, org.springframework.security.web.access.ExceptionTranslationFilter@200cdb37, org.springframework.security.web.access.intercept.AuthorizationFilter@440dc4f7]
+2026-06-18 12:20:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-18 12:20:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-06-18 12:20:25 [main] INFO  c.b.t.MoneyTransferSystemApplication - Started MoneyTransferSystemApplication in 2.335 seconds (process running for 2.507)
+2026-06-18 12:21:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-18 12:21:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-18 12:21:35 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-06-18 12:21:35 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.createAccount
+2026-06-18 12:21:35 [http-nio-8080-exec-2] INFO  c.b.transfer.service.AccountService - Creating account for username: kkop
+2026-06-18 12:21:35 [http-nio-8080-exec-2] INFO  c.b.transfer.service.AccountService - Account created successfully with ID: 1
+2026-06-18 12:21:35 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.createAccount - Execution time: 124ms
+2026-06-18 12:21:45 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-18 12:21:45 [http-nio-8080-exec-4] INFO  c.b.transfer.service.AccountService - Login attempt for username: kk
+2026-06-18 12:21:45 [http-nio-8080-exec-4] ERROR c.b.transfer.aspect.LoggingAspect - [AOP] Exception in AccountService.login after 15ms: Invalid username or password
+2026-06-18 12:21:45 [http-nio-8080-exec-4] ERROR c.b.t.e.GlobalExceptionHandler - Invalid credentials: Invalid username or password
+2026-06-18 12:21:55 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.createAccount
+2026-06-18 12:21:55 [http-nio-8080-exec-5] INFO  c.b.transfer.service.AccountService - Creating account for username: kk
+2026-06-18 12:21:55 [http-nio-8080-exec-5] INFO  c.b.transfer.service.AccountService - Account created successfully with ID: 2
+2026-06-18 12:21:55 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.createAccount - Execution time: 93ms
+2026-06-18 12:22:03 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-18 12:22:03 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Login attempt for username: kk
+2026-06-18 12:22:03 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Login successful for username: kk
+2026-06-18 12:22:03 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 99ms
+2026-06-18 12:22:03 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 12:22:03 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 12:22:03 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 5ms
+2026-06-18 12:22:03 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 10ms
+2026-06-18 12:22:21 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-18 12:22:21 [http-nio-8080-exec-2] INFO  c.b.transfer.service.TransferService - Processing transfer from 2 to 1 for amount 500
+2026-06-18 12:22:21 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.processReward
+2026-06-18 12:22:21 [http-nio-8080-exec-2] INFO  c.b.transfer.service.RewardService - Reward granted: 5 points to account 2 for transaction c4e770d9-d3e0-420f-9bf1-8459d21175fe
+2026-06-18 12:22:21 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.processReward - Execution time: 4ms
+2026-06-18 12:22:21 [http-nio-8080-exec-2] INFO  c.b.transfer.service.TransferService - Transfer completed successfully. Transaction ID: c4e770d9-d3e0-420f-9bf1-8459d21175fe
+2026-06-18 12:22:21 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting TransferService.transfer - Execution time: 8ms
+2026-06-18 12:22:23 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 12:22:23 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 12:22:23 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-18 12:22:23 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-18 12:22:28 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 12:22:28 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 1ms
+2026-06-18 12:22:31 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 12:22:31 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 12:22:31 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-18 12:22:31 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-18 12:22:38 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-18 12:22:38 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 3ms
+2026-06-18 12:22:40 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 12:22:40 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 12:22:40 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-18 12:22:40 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-18 12:22:44 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 12:22:44 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 12:22:44 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-18 12:22:44 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 1ms
+2026-06-18 12:33:22 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-06-18 12:33:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-18 12:33:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-18 13:20:28 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-18 13:20:28 [main] INFO  c.b.t.MoneyTransferSystemApplication - Starting MoneyTransferSystemApplication using Java 17.0.19 with PID 7319 (/Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/target/classes started by keertikrith in /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend)
+2026-06-18 13:20:28 [main] INFO  c.b.t.MoneyTransferSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-18 13:20:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-18 13:20:29 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 4 JPA repository interfaces.
+2026-06-18 13:20:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-18 13:20:29 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-18 13:20:29 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-18 13:20:29 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-06-18 13:20:29 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-18 13:20:29 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 667 ms
+2026-06-18 13:20:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-18 13:20:29 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:transferdb user=SA
+2026-06-18 13:20:29 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-18 13:20:29 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:transferdb'
+2026-06-18 13:20:29 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-18 13:20:29 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-06-18 13:20:29 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-18 13:20:29 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-18 13:20:29 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-18 13:20:30 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-18 13:20:30 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-18 13:20:30 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-18 13:20:30 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-18 13:20:30 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-18 13:20:30 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58bdcf40, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@28728558, org.springframework.security.web.context.SecurityContextHolderFilter@403ca4ec, org.springframework.security.web.header.HeaderWriterFilter@74aae322, org.springframework.web.filter.CorsFilter@7c0b0090, org.springframework.web.filter.CorsFilter@223c1a82, org.springframework.security.web.authentication.logout.LogoutFilter@787239f5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@16bc97b9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60df0131, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8f7cbcc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@144d064a, org.springframework.security.web.access.ExceptionTranslationFilter@38328799, org.springframework.security.web.access.intercept.AuthorizationFilter@338f9bb5]
+2026-06-18 13:20:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-18 13:20:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-06-18 13:20:31 [main] INFO  c.b.t.MoneyTransferSystemApplication - Started MoneyTransferSystemApplication in 2.394 seconds (process running for 2.564)
+2026-06-18 13:20:41 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-18 13:20:41 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-18 13:20:41 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-18 13:21:31 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.createAccount
+2026-06-18 13:21:31 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Creating account for username: kk
+2026-06-18 13:21:31 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Account created successfully with ID: 1
+2026-06-18 13:21:31 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.createAccount - Execution time: 84ms
+2026-06-18 13:21:45 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.createAccount
+2026-06-18 13:21:45 [http-nio-8080-exec-8] INFO  c.b.transfer.service.AccountService - Creating account for username: kkop
+2026-06-18 13:21:45 [http-nio-8080-exec-8] INFO  c.b.transfer.service.AccountService - Account created successfully with ID: 2
+2026-06-18 13:21:45 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.createAccount - Execution time: 92ms
+2026-06-18 13:21:55 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-18 13:21:55 [http-nio-8080-exec-10] INFO  c.b.transfer.service.AccountService - Login attempt for username: kk
+2026-06-18 13:21:55 [http-nio-8080-exec-10] INFO  c.b.transfer.service.AccountService - Login successful for username: kk
+2026-06-18 13:21:55 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 86ms
+2026-06-18 13:21:55 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 13:21:55 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:21:55 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 5ms
+2026-06-18 13:21:55 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 10ms
+2026-06-18 13:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-18 13:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.service.TransferService - Processing transfer from 1 to 2 for amount 500
+2026-06-18 13:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.processReward
+2026-06-18 13:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.service.RewardService - Reward granted: 5 points to account 1 for transaction 99a5fefe-b0be-4d9b-a43b-6aa6a8936fce
+2026-06-18 13:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.processReward - Execution time: 3ms
+2026-06-18 13:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.service.TransferService - Transfer completed successfully. Transaction ID: 99a5fefe-b0be-4d9b-a43b-6aa6a8936fce
+2026-06-18 13:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting TransferService.transfer - Execution time: 8ms
+2026-06-18 13:22:16 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 13:22:16 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:22:16 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-18 13:22:16 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-18 13:22:22 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:22:22 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-18 13:22:29 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 13:22:29 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:22:29 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 2ms
+2026-06-18 13:22:29 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-18 13:22:47 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-18 13:22:47 [http-nio-8080-exec-2] INFO  c.b.transfer.service.TransferService - Processing transfer from 1 to 2 for amount 9999
+2026-06-18 13:22:47 [http-nio-8080-exec-2] ERROR c.b.transfer.service.TransferService - Transfer failed: Insufficient balance in source account
+2026-06-18 13:22:47 [http-nio-8080-exec-2] ERROR c.b.transfer.aspect.LoggingAspect - [AOP] Exception in TransferService.transfer after 1ms: Insufficient balance in source account
+2026-06-18 13:22:47 [http-nio-8080-exec-2] ERROR c.b.t.e.GlobalExceptionHandler - Insufficient balance: Insufficient balance in source account
+2026-06-18 13:22:54 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-18 13:22:54 [http-nio-8080-exec-4] INFO  c.b.transfer.service.TransferService - Processing transfer from 1 to 2 for amount 500
+2026-06-18 13:22:54 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.processReward
+2026-06-18 13:22:54 [http-nio-8080-exec-4] INFO  c.b.transfer.service.RewardService - Reward granted: 5 points to account 1 for transaction d36e9997-9d0b-41da-8718-b94778ac1c46
+2026-06-18 13:22:54 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.processReward - Execution time: 1ms
+2026-06-18 13:22:54 [http-nio-8080-exec-4] INFO  c.b.transfer.service.TransferService - Transfer completed successfully. Transaction ID: d36e9997-9d0b-41da-8718-b94778ac1c46
+2026-06-18 13:22:54 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting TransferService.transfer - Execution time: 4ms
+2026-06-18 13:22:57 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 13:22:57 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:22:57 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-18 13:22:57 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-18 13:23:00 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:23:00 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-18 13:23:06 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.redeemPoints
+2026-06-18 13:23:06 [http-nio-8080-exec-8] INFO  c.b.transfer.service.RewardService - Redeemed 10 points (₹10) for account 1. New available: 0
+2026-06-18 13:23:06 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.redeemPoints - Execution time: 4ms
+2026-06-18 13:23:06 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:23:06 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-18 13:23:14 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:23:14 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 13:23:14 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-18 13:23:14 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-18 13:23:22 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:23:22 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-18 13:23:25 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 13:23:25 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:23:25 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-18 13:23:25 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-18 13:25:02 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-18 13:25:02 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-18 13:25:02 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-18 13:25:02 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-18 13:45:36 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m37s42ms).
+2026-06-18 14:02:08 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m31s398ms).
+2026-06-18 14:39:17 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=37m8s931ms).
+2026-06-18 14:53:06 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m13s481ms).
+2026-06-18 15:27:39 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m32s543ms).
+2026-06-18 15:42:08 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m29s447ms).
+2026-06-18 15:58:09 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m556ms).
+2026-06-18 16:53:44 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55m35s27ms).
+2026-06-18 17:07:09 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m25s554ms).
+2026-06-18 17:46:10 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m229ms).
+2026-06-18 17:48:20 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m9s968ms).

@@ -14,6 +14,9 @@ import java.util.List;
 public class RewardSummaryResponse {
 
     private Long accountId;
-    private int totalPoints;
-    private List<RewardLedgerResponse> history;
+    private int totalPoints;                                // All-time earned points
+    private int redeemedPoints;                             // Total points redeemed so far
+    private int availablePoints;                            // totalPoints - redeemedPoints
+    private List<RewardLedgerResponse> history;             // Earn history
+    private List<RewardRedemptionLedgerResponse> redemptionHistory; // Redeem history
 }
