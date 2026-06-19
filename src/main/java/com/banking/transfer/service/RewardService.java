@@ -20,48 +20,51 @@ import java.util.stream.Collectors;
 @Slf4j
 public class RewardService {
 
-    // Minimum amount for reward eligibility
     private static final BigDecimal MINIMUM_ELIGIBLE_AMOUNT = new BigDecimal("100");
-
-    // 1 point per ₹100 transferred
     private static final BigDecimal POINTS_DIVISOR = new BigDecimal("100");
 
     private final RewardLedgerRepository rewardLedgerRepository;
 
-    /**
-     * Evaluates a completed transaction for reward eligibility and grants points
-     * if all conditions are met. Idempotent — safe to call multiple times for the
-     * same transaction.
-     *
-     * Eligibility rules:
-     *   1. Transaction status must be SUCCESS
-     *   2. Amount must be > 100
-     *   3. Sender and receiver must be different accounts (self-transfer guard)
-     *
-     * Called by TransferService immediately after a successful transaction save.
-     *
-     * @param transactionLog  the saved transaction to evaluate
-     * @param senderAccountId the account that sent the money (receives the reward)
-     */
     @Transactional
-    public void processReward(TransactionLog transactionLog, Long senderAccountId) {
+    public void redeemPoints(Long accountId, String transactionId, int pointsToDeduct) {
+        log.info("Redeeming {} reward points from account {} for transaction {}", pointsToDeduct, accountId, transactionId);
+
+        // FIX 1: Idempotency check for point redemption
+        if (rewardLedgerRepository.existsByTransactionId(transactionId)) {
+            log.warn("Transaction {} already has an entry in the reward ledger. Skipping redemption.", transactionId);
+            return;
+        }
+
+        RewardLedger ledger = RewardLedger.builder()
+                .accountId(accountId)
+                .transactionId(transactionId)
+                .pointsEarned(-pointsToDeduct)
+                .build();
+
+        rewardLedgerRepository.save(ledger);
+    }
+
+    @Transactional
+    public void processReward(TransactionLog transactionLog, Long senderAccountId, BigDecimal cashAmountSpent) {
         String txId = transactionLog.getId();
 
-        // Idempotency guard — never grant reward twice for the same transaction
-        if (rewardLedgerRepository.findByTransactionId(txId).isPresent()) {
-            log.warn("Reward already processed for transaction {}. Skipping.", txId);
+        // FIX 2: Simplified check. If the transaction exists at all, skip it due to Unique Index
+        if (rewardLedgerRepository.existsByTransactionId(txId)) {
+            log.warn("Reward ledger entry already exists for transaction {}. Skipping processing.", txId);
             return;
         }
 
-        if (!isEligible(transactionLog)) {
-            log.debug("Transaction {} is not eligible for rewards.", txId);
+        // Rule: Base eligibility calculations strictly on net out-of-pocket cash spent
+        if (transactionLog.getStatus() != TransactionStatus.SUCCESS
+                || cashAmountSpent.compareTo(MINIMUM_ELIGIBLE_AMOUNT) <= 0
+                || transactionLog.getFromAccountId().equals(transactionLog.getToAccountId())) {
+            log.debug("Transaction {} is not eligible for earning new rewards.", txId);
             return;
         }
 
-        int points = calculatePoints(transactionLog.getAmount());
+        int points = calculatePoints(cashAmountSpent);
 
         if (points <= 0) {
-            log.debug("Transaction {} yields 0 points. No reward granted.", txId);
             return;
         }
 
@@ -72,13 +75,9 @@ public class RewardService {
                 .build();
 
         rewardLedgerRepository.save(ledger);
-
-        log.info("Reward granted: {} points to account {} for transaction {}", points, senderAccountId, txId);
+        log.info("Reward granted: {} points to account {} based on cash spend of ₹{}", points, senderAccountId, cashAmountSpent);
     }
 
-    /**
-     * Returns total reward points and full reward history for an account.
-     */
     @Transactional(readOnly = true)
     public RewardSummaryResponse getRewardSummary(Long accountId) {
         int totalPoints = rewardLedgerRepository.sumPointsByAccountId(accountId);
@@ -95,32 +94,6 @@ public class RewardService {
                 .build();
     }
 
-    // ── Private helpers ──────────────────────────────────────────────────────────
-
-    private boolean isEligible(TransactionLog tx) {
-        // Rule 1: Must be a successful transaction
-        if (tx.getStatus() != TransactionStatus.SUCCESS) {
-            return false;
-        }
-
-        // Rule 2: Amount must be strictly greater than 100
-        if (tx.getAmount().compareTo(MINIMUM_ELIGIBLE_AMOUNT) <= 0) {
-            return false;
-        }
-
-        // Rule 3: Sender and receiver must be different (no self-transfers)
-        // TransferService already validates this, but we guard here too for safety
-        if (tx.getFromAccountId().equals(tx.getToAccountId())) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * 1 point per ₹100, floored.
-     * e.g. ₹250 → 2 points, ₹199 → 1 point
-     */
     private int calculatePoints(BigDecimal amount) {
         return amount.divide(POINTS_DIVISOR, 0, java.math.RoundingMode.FLOOR).intValue();
     }

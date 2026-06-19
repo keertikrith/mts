@@ -11,6 +11,9 @@ import java.util.Optional;
 @Repository
 public interface RewardLedgerRepository extends JpaRepository<RewardLedger, Long> {
 
+    // Fast check to prevent unique constraint violation exceptions
+    boolean existsByTransactionId(String transactionId);
+
     // Used as idempotency guard — never double-reward a transaction
     Optional<RewardLedger> findByTransactionId(String transactionId);
 

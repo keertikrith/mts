@@ -1,0 +1,508 @@
+2026-06-17 14:49:45 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-06-17 14:49:45 [main] INFO  c.b.t.MoneyTransferSystemApplication - Starting MoneyTransferSystemApplication using Java 17.0.12 with PID 9056 (C:\Users\user\Desktop\projects\mts\target\classes started by user in C:\Users\user\Desktop\projects\mts)
+2026-06-17 14:49:45 [main] INFO  c.b.t.MoneyTransferSystemApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-17 14:49:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-17 14:49:45 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+2026-06-17 14:49:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-17 14:49:46 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-17 14:49:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-17 14:49:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+2026-06-17 14:49:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-06-17 14:49:46 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1145 ms
+2026-06-17 14:49:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-17 14:49:46 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:transferdb user=SA
+2026-06-17 14:49:46 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-17 14:49:46 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:transferdb'
+2026-06-17 14:49:46 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-17 14:49:46 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2026-06-17 14:49:47 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-06-17 14:49:47 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-17 14:49:47 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-17 14:49:47 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-17 14:49:47 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-17 14:49:48 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-17 14:49:48 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-17 14:49:48 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-06-17 14:49:48 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@11987483, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c5c7db1, org.springframework.security.web.context.SecurityContextHolderFilter@59bb8f80, org.springframework.security.web.header.HeaderWriterFilter@8f7cbcc, org.springframework.web.filter.CorsFilter@64b1d0ab, org.springframework.web.filter.CorsFilter@4758158f, org.springframework.security.web.authentication.logout.LogoutFilter@6f215ff3, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4a28852d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@59f0f273, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3052ce36, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15364d8b, org.springframework.security.web.access.ExceptionTranslationFilter@403ca4ec, org.springframework.security.web.access.intercept.AuthorizationFilter@67a2fb00]
+2026-06-17 14:49:49 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-17 14:49:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+2026-06-17 14:49:49 [main] INFO  c.b.t.MoneyTransferSystemApplication - Started MoneyTransferSystemApplication in 4.238 seconds (process running for 4.562)
+2026-06-17 14:56:05 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-17 14:56:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-17 14:56:05 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-06-17 14:56:05 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.createAccount
+2026-06-17 14:56:05 [http-nio-8080-exec-2] INFO  c.b.transfer.service.AccountService - Creating account for username: Kartikey
+2026-06-17 14:56:05 [http-nio-8080-exec-2] INFO  c.b.transfer.service.AccountService - Account created successfully with ID: 1
+2026-06-17 14:56:05 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.createAccount - Execution time: 165ms
+2026-06-17 14:56:09 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 14:56:09 [http-nio-8080-exec-4] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 14:56:09 [http-nio-8080-exec-4] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 14:56:09 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 69ms
+2026-06-17 14:56:10 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 14:56:10 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 14:56:10 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 7ms
+2026-06-17 14:56:10 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 15ms
+2026-06-17 15:07:44 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:07:44 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 8ms
+2026-06-17 15:07:44 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:07:44 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:08:31 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:08:31 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:08:31 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:08:31 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:08:48 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:08:48 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:08:48 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:08:48 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:08:50 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:08:50 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:08:50 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:08:50 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:09:08 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:09:08 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:09:08 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 2ms
+2026-06-17 15:09:08 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:09:34 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:09:34 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:09:34 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:09:34 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:10:53 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:10:53 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:10:53 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:10:53 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-17 15:11:17 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:11:17 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:11:17 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:11:17 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:11:50 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:11:50 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:11:50 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:11:50 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:13:45 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 15:13:45 [http-nio-8080-exec-3] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 15:13:45 [http-nio-8080-exec-3] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 15:13:45 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 61ms
+2026-06-17 15:13:45 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:13:45 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:13:45 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:13:45 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:14:15 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.createAccount
+2026-06-17 15:14:15 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Creating account for username: Keerti
+2026-06-17 15:14:15 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Account created successfully with ID: 2
+2026-06-17 15:14:15 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.createAccount - Execution time: 65ms
+2026-06-17 15:14:24 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 15:14:24 [http-nio-8080-exec-7] INFO  c.b.transfer.service.AccountService - Login attempt for username: Keerti
+2026-06-17 15:14:24 [http-nio-8080-exec-7] INFO  c.b.transfer.service.AccountService - Login successful for username: Keerti
+2026-06-17 15:14:24 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 62ms
+2026-06-17 15:14:24 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:14:24 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:14:24 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:14:24 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:14:48 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-17 15:14:48 [http-nio-8080-exec-3] INFO  c.b.transfer.service.TransferService - Processing transfer from 2 to 1 for amount 100
+2026-06-17 15:14:48 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.processReward
+2026-06-17 15:14:48 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.processReward - Execution time: 2ms
+2026-06-17 15:14:48 [http-nio-8080-exec-3] INFO  c.b.transfer.service.TransferService - Transfer completed successfully. Transaction ID: 29566329-d01a-4f97-af2e-15bc71ff1a0b
+2026-06-17 15:14:48 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting TransferService.transfer - Execution time: 11ms
+2026-06-17 15:14:50 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:14:50 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:14:50 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:14:50 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:14:57 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 15:14:57 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 15:14:57 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 15:14:57 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 61ms
+2026-06-17 15:14:57 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:14:57 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:14:57 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:14:57 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:15:09 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-17 15:15:09 [http-nio-8080-exec-9] INFO  c.b.transfer.service.TransferService - Processing transfer from 1 to 2 for amount 500
+2026-06-17 15:15:09 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.processReward
+2026-06-17 15:15:09 [http-nio-8080-exec-9] INFO  c.b.transfer.service.RewardService - Reward granted: 5 points to account 1 for transaction 51f81cd1-976c-4b3d-8366-4b3e38922f65
+2026-06-17 15:15:09 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.processReward - Execution time: 3ms
+2026-06-17 15:15:09 [http-nio-8080-exec-9] INFO  c.b.transfer.service.TransferService - Transfer completed successfully. Transaction ID: 51f81cd1-976c-4b3d-8366-4b3e38922f65
+2026-06-17 15:15:09 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting TransferService.transfer - Execution time: 7ms
+2026-06-17 15:15:11 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:15:11 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:15:11 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:15:11 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-17 15:15:16 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:15:16 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 6ms
+2026-06-17 15:15:18 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:15:18 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:15:18 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:15:18 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:15:21 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:15:21 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:15:24 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:15:24 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:15:24 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 2ms
+2026-06-17 15:15:24 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:16:01 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 15:16:01 [http-nio-8080-exec-9] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 15:16:01 [http-nio-8080-exec-9] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 15:16:01 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 60ms
+2026-06-17 15:16:01 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:16:01 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:16:01 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:16:01 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:16:09 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:16:09 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 4ms
+2026-06-17 15:16:13 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:16:13 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:16:13 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:16:13 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:16:35 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:16:35 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 3ms
+2026-06-17 15:16:36 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:16:36 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:16:36 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:16:36 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:17:01 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-17 15:17:01 [http-nio-8080-exec-7] INFO  c.b.transfer.service.TransferService - Processing transfer from 1 to 2 for amount 1000
+2026-06-17 15:17:01 [http-nio-8080-exec-7] ERROR c.b.transfer.service.TransferService - Transfer failed: Insufficient balance in source account
+2026-06-17 15:17:01 [http-nio-8080-exec-7] ERROR c.b.transfer.aspect.LoggingAspect - [AOP] Exception in TransferService.transfer after 3ms: Insufficient balance in source account
+2026-06-17 15:17:01 [http-nio-8080-exec-7] ERROR c.b.t.e.GlobalExceptionHandler - Insufficient balance: Insufficient balance in source account
+2026-06-17 15:19:30 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:19:30 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:19:30 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:19:30 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 6ms
+2026-06-17 15:19:58 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:19:58 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 2ms
+2026-06-17 15:19:58 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:19:58 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:20:43 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:20:43 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:20:43 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:20:43 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:21:00 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:00 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:00 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:21:00 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:21:18 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 15:21:18 [http-nio-8080-exec-7] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 15:21:18 [http-nio-8080-exec-7] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 15:21:18 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 61ms
+2026-06-17 15:21:18 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:18 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:18 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:21:18 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:21:21 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:21:21 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:21:22 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:22 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:22 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:21:22 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:21:23 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:21:23 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:21:25 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:25 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:25 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 9ms
+2026-06-17 15:21:25 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 10ms
+2026-06-17 15:21:26 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:26 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:26 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 3ms
+2026-06-17 15:21:26 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 5ms
+2026-06-17 15:21:27 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:21:27 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:21:28 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:28 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:28 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:21:28 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:21:29 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:29 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:21:30 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:30 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:21:32 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:32 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:32 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:21:32 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:21:55 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:55 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:55 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:21:55 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:21:56 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:21:56 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:21:56 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:21:56 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:21:59 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:21:59 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:21:59 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:21:59 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:22:03 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:22:03 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:22:03 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:22:03 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:22:10 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:22:10 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:22:10 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:22:10 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:22:14 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:22:14 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:22:14 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-17 15:22:25 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:22:25 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:22:26 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:22:26 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:22:27 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:22:27 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:22:27 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:22:27 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:22:27 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:22:27 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:22:29 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:22:29 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:22:29 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:22:29 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:22:33 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:22:33 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:22:33 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:22:33 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:22:38 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:22:38 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:22:38 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:22:38 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:24:45 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 15:24:45 [http-nio-8080-exec-8] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 15:24:45 [http-nio-8080-exec-8] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 15:24:45 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 67ms
+2026-06-17 15:24:45 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:24:45 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:24:45 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:24:45 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:24:55 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:24:55 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:24:55 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:24:55 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:24:56 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:24:56 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 3ms
+2026-06-17 15:24:57 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:24:57 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:24:57 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:24:57 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 1ms
+2026-06-17 15:24:58 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:24:58 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:24:59 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:24:59 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:24:59 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:24:59 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:28:38 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:28:38 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:28:39 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:28:39 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:28:39 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:28:39 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:31:21 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:31:21 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:31:21 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:31:21 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:31:37 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:31:37 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:31:37 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 3ms
+2026-06-17 15:31:37 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:31:50 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:31:50 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:31:50 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:31:50 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:32:56 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:32:56 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:32:56 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:32:56 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:33:30 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:33:30 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:33:30 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:33:30 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:33:59 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:33:59 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:33:59 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:33:59 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:34:20 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:34:20 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:34:21 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:34:21 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:34:21 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:34:21 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:34:21 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:34:21 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:34:22 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:34:22 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:34:22 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:34:22 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:34:31 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:34:31 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:34:31 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:34:31 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:34:43 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:34:43 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:34:43 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:34:43 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:36:33 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 15:36:33 [http-nio-8080-exec-7] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 15:36:33 [http-nio-8080-exec-7] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 15:36:33 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 59ms
+2026-06-17 15:36:33 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:36:33 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:36:33 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 15:36:33 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:36:47 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-17 15:36:47 [http-nio-8080-exec-8] INFO  c.b.transfer.service.TransferService - Processing transfer from 1 to 2 for amount 200
+2026-06-17 15:36:47 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.processReward
+2026-06-17 15:36:47 [http-nio-8080-exec-8] INFO  c.b.transfer.service.RewardService - Reward granted: 2 points to account 1 for transaction eaf092a2-9d5d-4433-b2c8-caacbe82e9aa
+2026-06-17 15:36:47 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.processReward - Execution time: 2ms
+2026-06-17 15:36:47 [http-nio-8080-exec-8] INFO  c.b.transfer.service.TransferService - Transfer completed successfully. Transaction ID: eaf092a2-9d5d-4433-b2c8-caacbe82e9aa
+2026-06-17 15:36:47 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting TransferService.transfer - Execution time: 5ms
+2026-06-17 15:36:49 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:36:49 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:36:49 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:36:49 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:36:53 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:36:53 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 3ms
+2026-06-17 15:36:54 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:36:54 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:36:54 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:36:54 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:36:55 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:36:55 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:36:58 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:36:58 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:36:58 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 7ms
+2026-06-17 15:36:58 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 9ms
+2026-06-17 15:37:21 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:37:21 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:37:22 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:37:22 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:37:22 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:37:22 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:37:24 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:37:24 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:37:24 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:37:24 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:56:39 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 15:56:39 [http-nio-8080-exec-10] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 15:56:39 [http-nio-8080-exec-10] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 15:56:39 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 60ms
+2026-06-17 15:56:39 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:56:39 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:56:39 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:56:39 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 15:56:40 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 15:56:40 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 15:56:42 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:56:42 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:56:42 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:56:42 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 15:57:43 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 15:57:43 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 15:57:43 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 15:57:43 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:39:23 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:39:23 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:39:23 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 2ms
+2026-06-17 16:39:23 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-17 16:40:15 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 16:40:15 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Login attempt for username: Kartikey
+2026-06-17 16:40:15 [http-nio-8080-exec-6] INFO  c.b.transfer.service.AccountService - Login successful for username: Kartikey
+2026-06-17 16:40:15 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 61ms
+2026-06-17 16:40:15 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:40:15 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:40:15 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:40:15 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms
+2026-06-17 16:40:17 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:40:17 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:40:19 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:40:19 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:40:19 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:40:19 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:40:36 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:40:36 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 16:40:38 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:40:38 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:40:38 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 0ms
+2026-06-17 16:40:38 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 1ms
+2026-06-17 16:40:40 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:40:40 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 16:41:18 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:41:18 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 16:41:30 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:41:30 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 16:41:56 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:41:56 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 1ms
+2026-06-17 16:43:59 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:43:59 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 16:45:27 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:45:27 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 1ms
+2026-06-17 16:45:30 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:45:30 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 1ms
+2026-06-17 16:45:38 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:45:38 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 1ms
+2026-06-17 16:45:55 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:45:55 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 16:45:56 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:45:57 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 2ms
+2026-06-17 16:46:02 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:46:02 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:46:02 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:46:02 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:46:04 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:46:04 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 1ms
+2026-06-17 16:46:05 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:46:05 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:46:05 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:46:05 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:46:06 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:46:06 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 1ms
+2026-06-17 16:46:25 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:46:25 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:46:29 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:46:29 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 16:46:33 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:46:33 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:46:33 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:46:33 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:47:09 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:47:09 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:09 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:47:09 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:47:10 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getTransactions
+2026-06-17 16:47:10 [http-nio-8080-exec-9] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getTransactions - Execution time: 1ms
+2026-06-17 16:47:11 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:11 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:47:11 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:47:11 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:47:12 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:12 [http-nio-8080-exec-8] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:47:13 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:13 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:47:13 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:47:13 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 3ms
+2026-06-17 16:47:27 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:47:27 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:47:27 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:27 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 1ms
+2026-06-17 16:47:32 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.login
+2026-06-17 16:47:32 [http-nio-8080-exec-7] INFO  c.b.transfer.service.AccountService - Login attempt for username: Keerti
+2026-06-17 16:47:32 [http-nio-8080-exec-7] INFO  c.b.transfer.service.AccountService - Login successful for username: Keerti
+2026-06-17 16:47:32 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.login - Execution time: 59ms
+2026-06-17 16:47:32 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:32 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:47:32 [http-nio-8080-exec-4] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:47:32 [http-nio-8080-exec-3] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:47:41 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering TransferService.transfer
+2026-06-17 16:47:41 [http-nio-8080-exec-5] INFO  c.b.transfer.service.TransferService - Processing transfer from 2 to 1 for amount 1000
+2026-06-17 16:47:41 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.processReward
+2026-06-17 16:47:41 [http-nio-8080-exec-5] INFO  c.b.transfer.service.RewardService - Reward granted: 10 points to account 2 for transaction 722efd47-2922-4bb5-91e7-b063d3db7c77
+2026-06-17 16:47:41 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.processReward - Execution time: 3ms
+2026-06-17 16:47:41 [http-nio-8080-exec-5] INFO  c.b.transfer.service.TransferService - Transfer completed successfully. Transaction ID: 722efd47-2922-4bb5-91e7-b063d3db7c77
+2026-06-17 16:47:41 [http-nio-8080-exec-5] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting TransferService.transfer - Execution time: 6ms
+2026-06-17 16:47:43 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:47:43 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:43 [http-nio-8080-exec-6] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:47:43 [http-nio-8080-exec-1] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:47:47 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:47 [http-nio-8080-exec-10] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 2ms
+2026-06-17 16:47:50 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering AccountService.getAccountResponse
+2026-06-17 16:47:50 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Entering RewardService.getRewardSummary
+2026-06-17 16:47:50 [http-nio-8080-exec-7] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting AccountService.getAccountResponse - Execution time: 1ms
+2026-06-17 16:47:50 [http-nio-8080-exec-2] INFO  c.b.transfer.aspect.LoggingAspect - [AOP] Exiting RewardService.getRewardSummary - Execution time: 4ms

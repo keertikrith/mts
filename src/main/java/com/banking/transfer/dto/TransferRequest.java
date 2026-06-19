@@ -28,4 +28,7 @@ public class TransferRequest {
 
     @NotBlank(message = "Idempotency key is required")
     private String idempotencyKey;
+
+    @Builder.Default
+    private boolean redeemRewards = false; // NEW: True if the user wants to apply points as a discount
 }

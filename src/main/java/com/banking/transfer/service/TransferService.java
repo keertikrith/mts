@@ -12,108 +12,121 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+
 @Service
 @Slf4j
 public class TransferService {
 
     private final AccountRepository accountRepository;
     private final TransactionLogRepository transactionLogRepository;
-    private final RewardService rewardService;                          // ← NEW
+    private final RewardService rewardService;
 
     public TransferService(AccountRepository accountRepository,
                            TransactionLogRepository transactionLogRepository,
-                           RewardService rewardService) {                              // ← NEW
+                           RewardService rewardService) {
         this.accountRepository = accountRepository;
         this.transactionLogRepository = transactionLogRepository;
-        this.rewardService = rewardService;                            // ← NEW
+        this.rewardService = rewardService;
     }
 
     @Transactional
     public TransferResponse transfer(TransferRequest request) {
-        log.info("Processing transfer from {} to {} for amount {}",
-                request.getFromAccountId(), request.getToAccountId(), request.getAmount());
+        log.info("Processing transfer from {} to {} for total amount ₹{}. Reward redemption: {}",
+                request.getFromAccountId(), request.getToAccountId(), request.getAmount(), request.isRedeemRewards());
 
-        // Validate request
         validateTransferRequest(request);
 
-        // Check for duplicate idempotency key
         if (transactionLogRepository.findByIdempotencyKey(request.getIdempotencyKey()).isPresent()) {
             throw new DuplicateTransferException(
                     "Duplicate transfer request with idempotency key: " + request.getIdempotencyKey());
         }
 
+        BigDecimal totalTransferAmount = request.getAmount();
+        BigDecimal rewardDiscountValue = BigDecimal.ZERO;
+        BigDecimal netCashRequired = totalTransferAmount;
+        int pointsToDeduct = 0;
+
         try {
-            // Get accounts with pessimistic locking
             Account fromAccount = accountRepository.findById(request.getFromAccountId())
-                    .orElseThrow(() -> new AccountNotFoundException(
-                            "Source account not found: " + request.getFromAccountId()));
-
+                    .orElseThrow(() -> new AccountNotFoundException("Source account not found"));
             Account toAccount = accountRepository.findById(request.getToAccountId())
-                    .orElseThrow(() -> new AccountNotFoundException(
-                            "Destination account not found: " + request.getToAccountId()));
+                    .orElseThrow(() -> new AccountNotFoundException("Destination account not found"));
 
-            // Validate account status
-            if (!fromAccount.isActive()) {
-                throw new AccountNotActiveException("Source account is not active");
+            if (!fromAccount.isActive() || !toAccount.isActive()) {
+                throw new AccountNotActiveException("One or both accounts are inactive");
             }
 
-            if (!toAccount.isActive()) {
-                throw new AccountNotActiveException("Destination account is not active");
+            // --- REDEMPTION SCHEDULING DISCOUNTS ---
+            if (request.isRedeemRewards()) {
+                int availablePoints = rewardService.getRewardSummary(request.getFromAccountId()).getTotalPoints();
+
+                if (availablePoints > 0) {
+                    // CHANGED: 1 points = 1 Rupee, so total points required is Amount * 1
+                    int pointsNeededForFullAmount = totalTransferAmount.multiply(new BigDecimal("1")).intValue();
+
+                    // Use either what is available or what is needed to cover the total amount
+                    pointsToDeduct = Math.min(availablePoints, pointsNeededForFullAmount);
+                    rewardDiscountValue = new BigDecimal(pointsToDeduct).divide(new BigDecimal("1"));
+                    netCashRequired = totalTransferAmount.subtract(rewardDiscountValue);
+                }
             }
 
-            // Validate sufficient balance
-            if (fromAccount.getBalance().compareTo(request.getAmount()) < 0) {
-                throw new InsufficientBalanceException("Insufficient balance in source account");
+            // Validate that checking account balance can cover the remaining cash portion
+            if (fromAccount.getBalance().compareTo(netCashRequired) < 0) {
+                throw new InsufficientBalanceException("Insufficient account balance to cover the remaining cash total of ₹" + netCashRequired);
             }
 
-            // Execute transfer (debit before credit)
-            fromAccount.debit(request.getAmount());
-            toAccount.credit(request.getAmount());
+            // Debit from source bank account (Only the cash portion)
+            if (netCashRequired.compareTo(BigDecimal.ZERO) > 0) {
+                fromAccount.debit(netCashRequired);
+                accountRepository.save(fromAccount);
+            }
 
-            // Save accounts
-            accountRepository.save(fromAccount);
-            accountRepository.save(toAccount);
-
-            // Log successful transaction
+            // Save baseline transaction log
             TransactionLog transactionLog = TransactionLog.builder()
                     .fromAccountId(request.getFromAccountId())
                     .toAccountId(request.getToAccountId())
-                    .amount(request.getAmount())
+                    .amount(totalTransferAmount)
                     .status(TransactionStatus.SUCCESS)
                     .idempotencyKey(request.getIdempotencyKey())
+                    .failureReason(pointsToDeduct > 0 ? "REDEEMED_POINTS: " + pointsToDeduct : null)
                     .build();
+            transactionLog = transactionLogRepository.save(transactionLog);
 
-            TransactionLog savedLog = transactionLogRepository.save(transactionLog);
+            // Commit points ledger deduction if rewards were used
+            if (pointsToDeduct > 0) {
+                rewardService.redeemPoints(request.getFromAccountId(), transactionLog.getId(), pointsToDeduct);
+            }
 
-            // ── NEW: process rewards for the sender ──────────────────────────────
-            rewardService.processReward(savedLog, request.getFromAccountId());
-            // ────────────────────────────────────────────────────────────────────
+            // Credit the full requested amount to the destination bank account
+            toAccount.credit(totalTransferAmount);
+            accountRepository.save(toAccount);
 
-            log.info("Transfer completed successfully. Transaction ID: {}", savedLog.getId());
+            // Process reward earnings based ONLY on net out-of-pocket cash spent
+            rewardService.processReward(transactionLog, request.getFromAccountId(), netCashRequired);
 
             return TransferResponse.builder()
-                    .transactionId(savedLog.getId())
+                    .transactionId(transactionLog.getId())
                     .status("SUCCESS")
-                    .message("Transfer completed successfully")
+                    .message(pointsToDeduct > 0
+                            ? String.format("Transferred successfully! Applied ₹%s discount via rewards.", rewardDiscountValue)
+                            : "Transfer completed successfully")
                     .debitedFrom(request.getFromAccountId())
                     .creditedTo(request.getToAccountId())
-                    .amount(request.getAmount())
+                    .amount(totalTransferAmount)
                     .build();
 
         } catch (Exception e) {
-            // Log failed transaction
             TransactionLog failedLog = TransactionLog.builder()
                     .fromAccountId(request.getFromAccountId())
                     .toAccountId(request.getToAccountId())
-                    .amount(request.getAmount())
+                    .amount(totalTransferAmount)
                     .status(TransactionStatus.FAILED)
                     .failureReason(e.getMessage())
                     .idempotencyKey(request.getIdempotencyKey())
                     .build();
-
             transactionLogRepository.save(failedLog);
-
-            log.error("Transfer failed: {}", e.getMessage());
             throw e;
         }
     }
@@ -122,7 +135,6 @@ public class TransferService {
         if (request.getFromAccountId().equals(request.getToAccountId())) {
             throw new IllegalArgumentException("Cannot transfer to the same account");
         }
-
         if (request.getAmount().signum() <= 0) {
             throw new IllegalArgumentException("Transfer amount must be positive");
         }
