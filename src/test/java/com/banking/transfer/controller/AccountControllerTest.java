@@ -8,6 +8,7 @@ import com.banking.transfer.service.AccountService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(AccountController.class)
+@AutoConfigureMockMvc(addFilters = false)
 class AccountControllerTest {
 
         @Autowired
@@ -130,7 +132,7 @@ class AccountControllerTest {
                 mockMvc.perform(post("/api/v1/accounts")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request)))
-                                .andExpect(status().isBadRequest());
+                                .andExpect(status().isUnprocessableEntity());
         }
 
         @Test
@@ -147,6 +149,6 @@ class AccountControllerTest {
                 mockMvc.perform(post("/api/v1/accounts")
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request)))
-                                .andExpect(status().isBadRequest());
+                                .andExpect(status().isUnprocessableEntity());
         }
 }

@@ -54,7 +54,7 @@ public class TransferService {
                     .orElseThrow(() -> new AccountNotFoundException("Destination account not found"));
 
             if (!fromAccount.isActive() || !toAccount.isActive()) {
-                throw new AccountNotActiveException("One or both accounts are inactive");
+                throw new AccountNotActiveException("One or both accounts are not active");
             }
 
             // --- REDEMPTION SCHEDULING DISCOUNTS ---
@@ -74,7 +74,7 @@ public class TransferService {
 
             // Validate that checking account balance can cover the remaining cash portion
             if (fromAccount.getBalance().compareTo(netCashRequired) < 0) {
-                throw new InsufficientBalanceException("Insufficient account balance to cover the remaining cash total of ₹" + netCashRequired);
+                throw new InsufficientBalanceException("Insufficient balance to cover the remaining cash total of ₹" + netCashRequired);
             }
 
             // Debit from source bank account (Only the cash portion)
