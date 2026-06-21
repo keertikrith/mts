@@ -6,7 +6,11 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "reward_ledger")
+@Table(
+        name = "reward_ledger",
+        uniqueConstraints = @UniqueConstraint(
+                name = "uk_reward_ledger_transaction_type",
+                columnNames = {"transaction_id", "reward_type"}))
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,9 +24,12 @@ public class RewardLedger {
     @Column(nullable = false)
     private Long accountId;
 
-    // The transaction that triggered this reward
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String transactionId;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private RewardType rewardType;
 
     @Column(nullable = false)
     private int pointsEarned;

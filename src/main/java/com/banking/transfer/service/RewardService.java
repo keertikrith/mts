@@ -3,6 +3,7 @@ package com.banking.transfer.service;
 import com.banking.transfer.dto.RewardLedgerResponse;
 import com.banking.transfer.dto.RewardSummaryResponse;
 import com.banking.transfer.entity.RewardLedger;
+import com.banking.transfer.entity.RewardType;
 import com.banking.transfer.entity.TransactionLog;
 import com.banking.transfer.entity.TransactionStatus;
 import com.banking.transfer.repository.RewardLedgerRepository;
@@ -29,15 +30,15 @@ public class RewardService {
     public void redeemPoints(Long accountId, String transactionId, int pointsToDeduct) {
         log.info("Redeeming {} reward points from account {} for transaction {}", pointsToDeduct, accountId, transactionId);
 
-        // FIX 1: Idempotency check for point redemption
-        if (rewardLedgerRepository.existsByTransactionId(transactionId)) {
-            log.warn("Transaction {} already has an entry in the reward ledger. Skipping redemption.", transactionId);
+        if (rewardLedgerRepository.existsByTransactionIdAndRewardType(transactionId, RewardType.REDEEM)) {
+            log.warn("Transaction {} already has a redemption entry in the reward ledger. Skipping redemption.", transactionId);
             return;
         }
 
         RewardLedger ledger = RewardLedger.builder()
                 .accountId(accountId)
                 .transactionId(transactionId)
+                .rewardType(RewardType.REDEEM)
                 .pointsEarned(-pointsToDeduct)
                 .build();
 
@@ -48,9 +49,8 @@ public class RewardService {
     public void processReward(TransactionLog transactionLog, Long senderAccountId, BigDecimal cashAmountSpent) {
         String txId = transactionLog.getId();
 
-        // FIX 2: Simplified check. If the transaction exists at all, skip it due to Unique Index
-        if (rewardLedgerRepository.existsByTransactionId(txId)) {
-            log.warn("Reward ledger entry already exists for transaction {}. Skipping processing.", txId);
+        if (rewardLedgerRepository.existsByTransactionIdAndRewardType(txId, RewardType.EARN)) {
+            log.warn("Transaction {} already has an earn entry in the reward ledger. Skipping processing.", txId);
             return;
         }
 
@@ -71,6 +71,7 @@ public class RewardService {
         RewardLedger ledger = RewardLedger.builder()
                 .accountId(senderAccountId)
                 .transactionId(txId)
+                .rewardType(RewardType.EARN)
                 .pointsEarned(points)
                 .build();
 
@@ -102,6 +103,7 @@ public class RewardService {
         return RewardLedgerResponse.builder()
                 .id(ledger.getId())
                 .transactionId(ledger.getTransactionId())
+                .rewardType(ledger.getRewardType())
                 .pointsEarned(ledger.getPointsEarned())
                 .createdOn(ledger.getCreatedOn())
                 .build();

@@ -2,6 +2,7 @@ package com.banking.transfer.service;
 
 import com.banking.transfer.dto.TransferRequest;
 import com.banking.transfer.dto.TransferResponse;
+import com.banking.transfer.dto.RewardSummaryResponse;
 import com.banking.transfer.entity.Account;
 import com.banking.transfer.entity.AccountStatus;
 import com.banking.transfer.entity.TransactionLog;
@@ -18,6 +19,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -32,6 +34,9 @@ class TransferServiceTest {
 
     @Mock
     private TransactionLogRepository transactionLogRepository;
+
+    @Mock
+    private RewardService rewardService;
 
     @InjectMocks
     private TransferService transferService;
@@ -99,6 +104,38 @@ class TransferServiceTest {
         verify(accountRepository, times(2)).findById(anyLong());
         verify(accountRepository, times(2)).save(any(Account.class));
         verify(transactionLogRepository, times(1)).save(any(TransactionLog.class));
+        verify(rewardService).processReward(any(TransactionLog.class), eq(1L), eq(new BigDecimal("500.00")));
+    }
+
+    @Test
+    void transfer_WithRewardsRedeemed_DebitsNetCashAndProcessesRewardOnNetCash() {
+        transferRequest.setAmount(new BigDecimal("1000.00"));
+        transferRequest.setRedeemRewards(true);
+
+        when(transactionLogRepository.findByIdempotencyKey(anyString())).thenReturn(Optional.empty());
+        when(accountRepository.findById(1L)).thenReturn(Optional.of(fromAccount));
+        when(accountRepository.findById(2L)).thenReturn(Optional.of(toAccount));
+        when(rewardService.getRewardSummary(1L)).thenReturn(RewardSummaryResponse.builder()
+                .accountId(1L)
+                .totalPoints(50)
+                .history(List.of())
+                .build());
+        when(accountRepository.save(any(Account.class))).thenAnswer(invocation -> invocation.getArgument(0));
+        when(transactionLogRepository.save(any(TransactionLog.class))).thenAnswer(invocation -> {
+            TransactionLog log = invocation.getArgument(0);
+            log.setId("TX123");
+            return log;
+        });
+
+        TransferResponse response = transferService.transfer(transferRequest);
+
+        assertNotNull(response);
+        assertEquals("SUCCESS", response.getStatus());
+        assertEquals(new BigDecimal("4050.00"), fromAccount.getBalance());
+        assertEquals(new BigDecimal("4000.00"), toAccount.getBalance());
+
+        verify(rewardService).redeemPoints(1L, "TX123", 50);
+        verify(rewardService).processReward(any(TransactionLog.class), eq(1L), eq(new BigDecimal("950.00")));
     }
 
     @Test

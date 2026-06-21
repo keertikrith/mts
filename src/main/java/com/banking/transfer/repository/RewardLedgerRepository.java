@@ -1,21 +1,18 @@
 package com.banking.transfer.repository;
 
 import com.banking.transfer.entity.RewardLedger;
+import com.banking.transfer.entity.RewardType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface RewardLedgerRepository extends JpaRepository<RewardLedger, Long> {
 
-    // Fast check to prevent unique constraint violation exceptions
-    boolean existsByTransactionId(String transactionId);
-
-    // Used as idempotency guard — never double-reward a transaction
-    Optional<RewardLedger> findByTransactionId(String transactionId);
+    // Used as idempotency guard, allowing one ledger entry per reward event type.
+    boolean existsByTransactionIdAndRewardType(String transactionId, RewardType rewardType);
 
     // All reward entries for an account, newest first
     List<RewardLedger> findByAccountIdOrderByCreatedOnDesc(Long accountId);
