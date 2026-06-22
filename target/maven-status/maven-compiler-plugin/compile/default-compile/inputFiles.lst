@@ -3,6 +3,7 @@
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/dto/TransferRequest.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/exception/DuplicateTransferException.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/dto/TransactionResponse.java
+/Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/SnowflakeSyncService.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/entity/TransactionStatus.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/controller/RewardController.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/repository/RewardRedemptionRepository.java
@@ -10,10 +11,12 @@
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/MoneyTransferSystemApplication.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/repository/AccountRepository.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/entity/TransactionLog.java
+/Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/config/SnowflakeConfig.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/controller/TransferController.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/TransferService.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/dto/CreateAccountRequest.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/dto/RewardLedgerResponse.java
+/Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/config/SnowflakeProperties.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/service/RewardService.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/aspect/LoggingAspect.java
 /Users/keertikrith/.gemini/antigravity/scratch/money-transfer-system/backend/src/main/java/com/banking/transfer/dto/RewardRedemptionLedgerResponse.java

@@ -1,27 +1,35 @@
-# MySQL Configuration (Profile: mysql)
+# ─────────────────────────────────────────────────────────────────
+# MySQL + Snowflake Profile
+# All sensitive values come from environment variables.
+# Copy .env.example → .env, fill in values, then:
+#   export $(cat .env | grep -v '^#' | xargs)
+#   mvn spring-boot:run
+# ─────────────────────────────────────────────────────────────────
+
 spring:
   application:
     name: money-transfer-system
-  
+
   datasource:
-    url: jdbc:mysql://localhost:3306/transferdb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:transferdb}?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: your_mysql_password
-    
-    # HikariCP connection pool settings
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD}
+
     hikari:
       maximum-pool-size: 10
       minimum-idle: 5
       connection-timeout: 20000
       idle-timeout: 300000
       max-lifetime: 1200000
-  
+
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
-      ddl-auto: update  # Change to 'validate' in production
-    show-sql: true
+      # 'update' — Hibernate auto-creates/alters tables on startup.
+      # Change to 'validate' once schema is stable in production.
+      ddl-auto: update
+    show-sql: false
     properties:
       hibernate:
         format_sql: true
@@ -29,7 +37,7 @@ spring:
           batch_size: 20
         order_inserts: true
         order_updates: true
-  
+
   security:
     user:
       name: admin
@@ -41,8 +49,21 @@ server:
     include-message: always
     include-binding-errors: always
 
+# ─────────────────────────────────────────────────────────────────
+# Snowflake — Analytics Data Warehouse
+# ─────────────────────────────────────────────────────────────────
+snowflake:
+  account:   ${SNOWFLAKE_ACCOUNT}
+  user:      ${SNOWFLAKE_USER}
+  password:  ${SNOWFLAKE_PASSWORD}
+  database:  ${SNOWFLAKE_DATABASE:MONEY_TRANSFER_DW}
+  schema:    ${SNOWFLAKE_SCHEMA:ANALYTICS}
+  warehouse: ${SNOWFLAKE_WAREHOUSE:COMPUTE_WH}
+  role:      ${SNOWFLAKE_ROLE:ACCOUNTADMIN}
+  # Set to false to disable Snowflake sync (e.g. if Snowflake is not set up yet)
+  enabled:   ${SNOWFLAKE_ENABLED:true}
+
 logging:
   level:
-    com.banking.transfer: DEBUG
-    org.hibernate.SQL: DEBUG
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.banking.transfer: INFO
+    net.snowflake: WARN

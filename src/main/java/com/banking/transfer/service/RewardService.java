@@ -13,7 +13,6 @@ import com.banking.transfer.exception.AccountNotFoundException;
 import com.banking.transfer.repository.AccountRepository;
 import com.banking.transfer.repository.RewardLedgerRepository;
 import com.banking.transfer.repository.RewardRedemptionRepository;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +22,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
 public class RewardService {
 
@@ -42,6 +40,17 @@ public class RewardService {
     private final RewardLedgerRepository rewardLedgerRepository;
     private final RewardRedemptionRepository rewardRedemptionRepository;
     private final AccountRepository accountRepository;
+    private final SnowflakeSyncService snowflakeSyncService;
+
+    public RewardService(RewardLedgerRepository rewardLedgerRepository,
+                         RewardRedemptionRepository rewardRedemptionRepository,
+                         AccountRepository accountRepository,
+                         SnowflakeSyncService snowflakeSyncService) {
+        this.rewardLedgerRepository = rewardLedgerRepository;
+        this.rewardRedemptionRepository = rewardRedemptionRepository;
+        this.accountRepository = accountRepository;
+        this.snowflakeSyncService = snowflakeSyncService;
+    }
 
     /**
      * Evaluates a completed transaction for reward eligibility and grants points
@@ -86,7 +95,10 @@ public class RewardService {
                 .pointsEarned(points)
                 .build();
 
-        rewardLedgerRepository.save(ledger);
+        RewardLedger savedLedger = rewardLedgerRepository.save(ledger);
+
+        // Sync to Snowflake asynchronously
+        snowflakeSyncService.syncRewardEarned(savedLedger);
 
         log.info("Reward granted: {} points to account {} for transaction {}", points, senderAccountId, txId);
     }
@@ -173,7 +185,11 @@ public class RewardService {
                 .pointsRedeemed(points)
                 .amountCredited(amountCredited)
                 .build();
-        rewardRedemptionRepository.save(redemption);
+        RewardRedemption savedRedemption = rewardRedemptionRepository.save(redemption);
+
+        // Sync to Snowflake asynchronously
+        snowflakeSyncService.syncRewardRedemption(savedRedemption);
+        snowflakeSyncService.syncAccount(account); // balance changed after redemption
 
         int newAvailable = available - points;
 

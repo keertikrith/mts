@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────────
+# H2 In-Memory Profile  (local dev / CI — no MySQL needed)
+# Activate with: --spring.profiles.active=h2
+# ─────────────────────────────────────────────────────────────────
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:transferdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+  security:
+    user:
+      name: admin
+      password: admin
+
+# Snowflake disabled in H2 profile — no credentials needed
+snowflake:
+  enabled: false
+  account:   placeholder
+  user:      placeholder
+  password:  placeholder
+  database:  MONEY_TRANSFER_DW
+  schema:    ANALYTICS
+  warehouse: COMPUTE_WH
+  role:      ACCOUNTADMIN

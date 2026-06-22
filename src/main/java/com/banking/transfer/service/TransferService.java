@@ -18,14 +18,17 @@ public class TransferService {
 
     private final AccountRepository accountRepository;
     private final TransactionLogRepository transactionLogRepository;
-    private final RewardService rewardService;                          // ← NEW
+    private final RewardService rewardService;
+    private final SnowflakeSyncService snowflakeSyncService;   // ← async SF sync
 
     public TransferService(AccountRepository accountRepository,
                            TransactionLogRepository transactionLogRepository,
-                           RewardService rewardService) {                              // ← NEW
+                           RewardService rewardService,
+                           SnowflakeSyncService snowflakeSyncService) {
         this.accountRepository = accountRepository;
         this.transactionLogRepository = transactionLogRepository;
-        this.rewardService = rewardService;                            // ← NEW
+        this.rewardService = rewardService;
+        this.snowflakeSyncService = snowflakeSyncService;
     }
 
     @Transactional
@@ -85,9 +88,14 @@ public class TransferService {
 
             TransactionLog savedLog = transactionLogRepository.save(transactionLog);
 
-            // ── NEW: process rewards for the sender ──────────────────────────────
+            // Process rewards for the sender
             rewardService.processReward(savedLog, request.getFromAccountId());
-            // ────────────────────────────────────────────────────────────────────
+
+            // ── Snowflake async sync (fire-and-forget, never blocks the response) ──
+            snowflakeSyncService.syncTransaction(savedLog);
+            snowflakeSyncService.syncAccount(fromAccount);
+            snowflakeSyncService.syncAccount(toAccount);
+            // ──────────────────────────────────────────────────────────────────────
 
             log.info("Transfer completed successfully. Transaction ID: {}", savedLog.getId());
 
@@ -111,7 +119,10 @@ public class TransferService {
                     .idempotencyKey(request.getIdempotencyKey())
                     .build();
 
-            transactionLogRepository.save(failedLog);
+            TransactionLog savedFailedLog = transactionLogRepository.save(failedLog);
+
+            // Also sync failed transactions — useful for failure analytics in Snowflake
+            snowflakeSyncService.syncTransaction(savedFailedLog);
 
             log.error("Transfer failed: {}", e.getMessage());
             throw e;

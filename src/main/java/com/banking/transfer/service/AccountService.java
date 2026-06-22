@@ -31,6 +31,7 @@ public class AccountService {
     private final AccountRepository accountRepository;
     private final TransactionLogRepository transactionLogRepository;
     private final PasswordEncoder passwordEncoder;
+    private final SnowflakeSyncService snowflakeSyncService;
 
     @Transactional
     public ResponseEntity<AccountResponse> createAccount(CreateAccountRequest request) {
@@ -50,6 +51,9 @@ public class AccountService {
 
         Account savedAccount = accountRepository.save(account);
         log.info("Account created successfully with ID: {}", savedAccount.getId());
+
+        // Sync new account to Snowflake asynchronously
+        snowflakeSyncService.syncAccount(savedAccount);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(toAccountResponse(savedAccount));
     }
